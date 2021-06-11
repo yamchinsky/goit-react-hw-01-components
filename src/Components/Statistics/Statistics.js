@@ -5,9 +5,7 @@ import PropTypes from "prop-types";
 const Statistics = ({ title, stats }) => {
   return (
     <StatisticsItemContainer className="statistics">
-      {title !== null ||
-        "undefined" ||
-        (false && <h2 className="title">{title}</h2>)}
+      {title && <h2 className="title">{title}</h2>}
 
       <ul className="stat-list">
         {stats.map((stat) => (
@@ -22,10 +20,16 @@ const Statistics = ({ title, stats }) => {
   );
 };
 
-Statistics.prototypes = {
-  label: PropTypes.string.isRequired,
-  percentage: PropTypes.number.isRequired,
-  id: PropTypes.number.isRequired,
+Statistics.propTypes = {
+  title: PropTypes.string,
+
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      percentage: PropTypes.number.isRequired,
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
 
 export default Statistics;

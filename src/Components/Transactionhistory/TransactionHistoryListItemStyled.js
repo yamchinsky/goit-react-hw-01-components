@@ -4,9 +4,7 @@ export const TransactionHistoryItemContainer = styled.table`
   margin-right: auto;
   margin-left: auto;
   border: 1px solid black;
-  display: flex;
   text-align: center;
-
   .thead {
     width: 450px;
     border: 1px solid black;

@@ -8,9 +8,7 @@ const FriendList = ({ friends }) => {
   return (
     <FriendListItemContainer className="friend-list">
       {friends.map((friend) => (
-        <>
-          <FriendListItem friend={friend} />
-        </>
+        <FriendListItem friend={friend} key={friend.id} />
       ))}
     </FriendListItemContainer>
   );
@@ -20,11 +18,8 @@ FriendList.defaultProps = {
   avatar: defaultSvg,
 };
 
-FriendList.prototypes = {
-  avatar: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  isOnline: PropTypes.bool.isRequired,
-  id: PropTypes.number.isRequired,
+FriendList.propTypes = {
+  friends: PropTypes.array.isRequired,
 };
 
 export default FriendList;

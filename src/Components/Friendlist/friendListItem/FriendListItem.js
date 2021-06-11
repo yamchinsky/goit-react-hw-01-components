@@ -20,8 +20,13 @@ const FriendListItem = ({ friend }) => {
   );
 };
 
-FriendListItem.prototypes = {
-  friend: PropTypes.object.isRequired,
+FriendListItem.propTypes = {
+  friend: PropTypes.shape({
+    avatar: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    isOnline: PropTypes.bool.isRequired,
+    id: PropTypes.number.isRequired,
+  }).isRequired,
 };
 
 export default FriendListItem;
