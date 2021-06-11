@@ -1,5 +1,6 @@
 import React from "react";
 import { ProfileItemContainer } from "./ProfileListItemStyled";
+import PropTypes from "prop-types";
 
 const Profile = (props) => {
   const {
@@ -34,6 +35,10 @@ const Profile = (props) => {
       </ul>
     </ProfileItemContainer>
   );
+};
+
+Profile.prototypes = {
+  props: PropTypes.object.isRequired,
 };
 
 export default Profile;

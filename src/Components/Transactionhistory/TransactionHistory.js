@@ -1,5 +1,7 @@
 import React from "react";
 import { TransactionHistoryItemContainer } from "./TransactionHistoryListItemStyled";
+import PropTypes from "prop-types";
+
 const TransactionHistory = ({ items }) => {
   return (
     <TransactionHistoryItemContainer class="transaction-history">
@@ -21,6 +23,13 @@ const TransactionHistory = ({ items }) => {
       </thead>
     </TransactionHistoryItemContainer>
   );
+};
+
+TransactionHistory.prototypes = {
+  currency: PropTypes.number.isRequired,
+  type: PropTypes.string.isRequired,
+  amount: PropTypes.number.isRequired,
+  id: PropTypes.number.isRequired,
 };
 
 export default TransactionHistory;
